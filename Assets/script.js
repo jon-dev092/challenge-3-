@@ -115,7 +115,7 @@ var generatePassword = function () {
 
 }
 
-// apply .js to classes
+// apply .js to id's
 var generateBtn = document.querySelector("#generate");
 
 function writePassword() {

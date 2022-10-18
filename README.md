@@ -5,7 +5,7 @@ This website showcases newly aquired javaScript applications learned from module
 and for loops to generate a new password given the criteria the user sets through a series of window prompts. 
 
 ## Usage 
-![Password Generator](./Assets/images/)
+![Password Generator](./Assets/images/screencapture-jon-dev092-github-io-challenge-3-2022-10-17-23_29_55.png)
 
 #### How to
 - Start by clicking the "Generate Password" button
@@ -22,7 +22,7 @@ MIT
 
 ## Links
 
-[Deployed Page]()                                                                                                                                                                                    
+[Deployed Page](https://jon-dev092.github.io/challenge-3-/)                                                                                                                                                                                    
 [Github Repo](https://github.com/jon-dev092/challenge-3-)
 
 
