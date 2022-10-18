@@ -5,15 +5,14 @@ var num = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9,];
 var upper = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
 var lower = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
 var spec = ["!", "@", "#", "$", "%", "&", "*", "+"]
-var randomChar = [];
+var randomChar = []; 
 
 
-
+// generate password function
 var generatePassword = function () {
 
-  
+  // character length prompt
   var charLength = prompt('Please enter length of password; enter a number between "8" and "128".');
- 
 
   if (charLength < 8 || charLength > 128) {
     alert('Must be a number between "8" and "128"');
@@ -24,7 +23,7 @@ var generatePassword = function () {
   }
 
 
-
+// confirm option for lowercase characters
   var charLower = confirm('Would you like to use lowercase characters?')
 
   if (!charLower) {
@@ -32,13 +31,9 @@ var generatePassword = function () {
   } else {
     charLower = lower;
   }
+ 
 
-  console.log(charLower);
-
-  
-
-
-
+// confirm option for uppercase characters
   var charUpper = confirm('Would you like to use uppercase characters?')
 
   if (!charUpper) {
@@ -47,10 +42,8 @@ var generatePassword = function () {
     charUpper = upper;
   }
 
-  console.log(charUpper)
 
-
-
+// confirm option for number characters
   var charNum = confirm('Would you like to use number characters?')
 
   if (!charNum) {
@@ -59,10 +52,8 @@ var generatePassword = function () {
     charNum = num
   }
 
-  console.log(charNum)
-
-
-
+  
+// confirm option for special charcters
   var charSpec = confirm('Would you like to use special characters?')
 
   if (!charSpec) {
@@ -71,10 +62,9 @@ var generatePassword = function () {
     charSpec = spec;
   }
 
-  console.log(charSpec)
+  
 
-
-
+// requires that user meet perameters
   var totalChar = charLower + charUpper + charNum + charSpec;
 
   if (totalChar.length <= 0) {
@@ -82,19 +72,14 @@ var generatePassword = function () {
     return generatePassword();
   }
 
-  console.log(totalChar)
-  console.log(totalChar.length)
+ 
 
-
-
+// gives randomChar a value for loop
   if (charLower) {
     randomChar = randomChar.concat(lower);
   } else if (!charLower) {
     charLower = '';
   }
-
-  console.log(charLower)
-  console.log(randomChar)
 
 
   if (charUpper) {
@@ -103,16 +88,12 @@ var generatePassword = function () {
     charUpper = '';
   }
 
-  console.log(charUpper)
-  console.log(randomChar)
 
   if (charNum) {
     randomChar = randomChar.concat(num);
   } else {
     num = '';
   }
-
-  console.log(randomChar)
 
 
   if (charSpec) {
@@ -121,28 +102,22 @@ var generatePassword = function () {
     spec = '';
   }
 
-  console.log(randomChar)
 
 
-
-
+// randomize charLength with added perameters
   var finalPassword = []
   for (i = 0; i < charLength; i++) {
     var range =[Math.floor(Math.random() * randomChar.length)];
     finalPassword = finalPassword + randomChar[range];
   }
 
-  console.log(finalPassword)
-
   return finalPassword;
-
 
 }
 
-
+// apply .js to classes
 var generateBtn = document.querySelector("#generate");
 
-// Write password to the #password input
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
@@ -151,5 +126,5 @@ function writePassword() {
 
 }
 
-// Add event listener to generate button
+// event listener to generate button
 generateBtn.addEventListener("click", writePassword);
